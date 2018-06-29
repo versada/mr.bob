@@ -38,7 +38,7 @@ def read(*rnames):
     return codecs.open(os.path.join(os.path.dirname(__file__), *rnames), 'r', 'utf-8').read()
 
 
-setup(name='mr.bob-versada',
+setup(name='versada.mr.bob',
       version='0.1.3.dev0',
       description='Bob renders directory structure templates',
       long_description=read('README.rst') + '\n' + read('HISTORY.rst'),
