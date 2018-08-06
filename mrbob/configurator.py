@@ -225,9 +225,16 @@ class Configurator(object):
         if self.pre_ask:
             for f in self.pre_ask:
                 f(self)
+
         # TODO: if users want to manipulate questions order, this is curently not possible.
+        non_interactive = maybe_bool(self.bobconfig.get('non_interactive', False))
         for question in self.questions:
-            self.variables[question.name] = question.ask(self)
+            if question.name not in self.variables:
+                self.variables[question.name] = question.ask(self)
+            # just trigger the post hooks
+            elif question.name in self.variables and non_interactive:
+                question.ask(self)
+
         if self.post_ask:
             for f in self.post_ask:
                 f(self)
