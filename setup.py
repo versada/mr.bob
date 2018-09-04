@@ -39,7 +39,7 @@ def read(*rnames):
 
 
 setup(name='versada_mrbob',
-      version='0.1.3.dev0',
+      version='0.1.4',
       description='Bob renders directory structure templates',
       long_description=read('README.rst') + '\n' + read('HISTORY.rst'),
       classifiers=[
