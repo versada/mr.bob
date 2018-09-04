@@ -64,7 +64,7 @@ def main(args=sys.argv[1:]):
     options = parser.parse_args(args=args)
 
     if options.version:
-        version = pkg_resources.get_distribution('mr.bob').version
+        version = pkg_resources.get_distribution('versada_mrbob').version
         return version
 
     if not options.template:
