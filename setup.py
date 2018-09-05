@@ -39,7 +39,6 @@ def read(*rnames):
 
 
 setup(name='versada_mrbob',
-      version='0.1.5',
       description='Bob renders directory structure templates',
       long_description=read('README.rst') + '\n' + read('HISTORY.rst'),
       classifiers=[
@@ -75,6 +74,8 @@ setup(name='versada_mrbob',
       [console_scripts]
       mrbob = mrbob.cli:main
       """,
+      use_scm_version=True,
+      setup_requires=['setuptools_scm'],
       include_package_data=True,
       zip_safe=False,
       )
